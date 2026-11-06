@@ -11,9 +11,26 @@ public class Main {
         GestionNegocio gestor = new GestionNegocio();
         int opcion = 0;
 
-        gestor.registrarBicicleta(new BiciUrbana("URB-01", "Trek"));
-        gestor.registrarBicicleta(new BiciMontania("MON-01", "Giant")); 
-        gestor.registrarBicicleta(new BiciElectrica("ELE-01", "Xiaomi"));
+        
+        gestor.registrarBicicleta(new BiciUrbana("URB-03", "Specialized"));
+        gestor.registrarBicicleta(new BiciUrbana("URB-04", "Cannondale"));
+        gestor.registrarBicicleta(new BiciUrbana("URB-05", "Orbea"));
+        gestor.registrarBicicleta(new BiciUrbana("URB-06", "Schwinn"));
+        gestor.registrarBicicleta(new BiciUrbana("URB-07", "Bianchi"));
+
+        // Bicicletas de Montaña
+        gestor.registrarBicicleta(new BiciMontania("MON-03", "Scott"));
+        gestor.registrarBicicleta(new BiciMontania("MON-04", "Santa Cruz"));
+        gestor.registrarBicicleta(new BiciMontania("MON-05", "Yeti"));
+        gestor.registrarBicicleta(new BiciMontania("MON-06", "Merida"));
+        gestor.registrarBicicleta(new BiciMontania("MON-07", "KTM"));
+
+        // Bicicletas Eléctricas
+        gestor.registrarBicicleta(new BiciElectrica("ELE-03", "Haibike"));
+        gestor.registrarBicicleta(new BiciElectrica("ELE-04", "Cube"));
+        gestor.registrarBicicleta(new BiciElectrica("ELE-05", "Aventon"));
+        gestor.registrarBicicleta(new BiciElectrica("ELE-06", "Rad Power"));
+        gestor.registrarBicicleta(new BiciElectrica("ELE-07", "Gocycle"));
 
         System.out.println("=== SISTEMA DE ALQUILER INICIADO ===");
 
