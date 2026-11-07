@@ -10,6 +10,26 @@ public class GestionNegocio {
     private ArrayList<Alquiler> alquileresActivos = new ArrayList<>();
     private double totalRecaudado = 0;
 
+    public GestionNegocio() {
+        
+        for (int i = 1; i <= 15; i++) {
+            String codigo = "URB-" + (i < 10 ? "0" + i : i); 
+            inventario.add(new BiciUrbana(codigo, "Giant")); 
+        }
+
+      
+        for (int i = 1; i <= 10; i++) {
+            String codigo = "ELE-" + (i < 10 ? "0" + i : i); 
+            inventario.add(new BiciElectrica(codigo, "Xiaomi")); 
+        }
+        
+       
+        for (int i = 1; i <= 10; i++) {
+            String codigo = "MON-" + (i < 10 ? "0" + i : i); 
+            inventario.add(new BiciMontania(codigo, "Trek")); 
+        }
+    }
+    
     public boolean registrarCliente(String documento, String nombre, String telefono) {
         for (Cliente c : clientes) {
             if (c.getDocumento().equals(documento)) {
@@ -31,10 +51,34 @@ public class GestionNegocio {
     }
 
     public void listarBicicletasDisponibles() {
+        int cantUrbanas = 0;
+        int cantElectricas = 0;
+        int cantMontania = 0;
+
         for (Bicicletas b : inventario) {
             if (b.getEstado().equals("Disponible")) {
-                System.out.println(b);
+                if (b.getCodigo().startsWith("URB")) {
+                    cantUrbanas++;
+                } else if (b.getCodigo().startsWith("ELE")) {
+                    cantElectricas++;
+                } else if (b.getCodigo().startsWith("MON")) {
+                    cantMontania++;
+                }
             }
+        }
+
+        System.out.println("--- RESUMEN DE INVENTARIO DISPONIBLE ---");
+        if (cantUrbanas > 0) {
+            System.out.println("[Urbana]    | Cantidad: " + cantUrbanas + " bicicletas | Codigos: [URB-01 al URB-15] | Estado: Disponible");
+        }
+        if (cantElectricas > 0) {
+            System.out.println("[Electrica] | Cantidad: " + cantElectricas + " bicicletas | Codigos: [ELE-01 al ELE-10] | Estado: Disponible");
+        }
+        if (cantMontania > 0) {
+            System.out.println("[Montania]   | Cantidad: " + cantMontania + " bicicletas | Codigos: [MON-01 al MON-10] | Estado: Disponible");
+        }
+        if (cantUrbanas == 0 && cantElectricas == 0 && cantMontania == 0) {
+            System.out.println("No hay bicicletas disponibles en este momento.");
         }
     }
 
