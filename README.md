@@ -13,5 +13,5 @@ Para probar y ejecutar este proyecto puede seguir estos pasos:
 1. En la página principal de este repositorio, descargar el archivo .zip .
 2. Descomprime el archivo .zip.
 3. Abrirlo con el Apache NetBeans.
-4. En el panel de proyectos, despliega la carpeta de paquetes y abrir el paquete `Main`.
+4. En el panel de proyectos, despliega la carpeta de paquetes y abrir el paquete Main.
 6.  compilar e interactúar con el menú principal digitando los números correspondientes a cada opción en la consola.
